@@ -31,7 +31,15 @@
            <li class="nav-item">
           <a class="nav-link" href="/Contact">Contact</a>
         </li>
-
+           <li class="nav-item">
+          <a class="nav-link" href="/product">Product</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="/product_api">Product_api</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="/show_product">Show_product</a>
+        </li>
 
         
         <li class="nav-item dropdown">

@@ -28,6 +28,34 @@ const routes = [
     name: 'employees',
     component: () => import(/* webpackChunkName: "type" */ '../views/employees.vue')
   }
+  ,
+  {
+  path: '/add_customer',
+  name: 'add_customer',
+  component: () => import(/* webpackChunkName: "type" */ '../views/Add_customer.vue')
+},
+{
+path: '/add_employees',
+name: 'add_employees',
+component: () => import(/* webpackChunkName: "type" */ '../views/Add_employees.vue')
+},
+{
+path: '/product',
+name: 'product',
+component: () => import(/* webpackChunkName: "type" */ '../views/Product.vue')
+},
+{
+path: '/product_api',
+name: 'product_api',
+component: () => import(/* webpackChunkName: "type" */ '../views/Product_api.vue')
+},
+{
+path: '/show_product',
+name: 'show_product',
+component: () => import(/* webpackChunkName: "type" */ '../views/Show_product.vue')
+}
+
+
 ]
 
 const router = createRouter({
