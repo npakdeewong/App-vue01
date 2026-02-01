@@ -34,12 +34,7 @@
            <li class="nav-item">
           <a class="nav-link" href="/product">Product</a>
         </li>
-          <li class="nav-item">
-          <a class="nav-link" href="/product_api">Product_api</a>
-        </li>
-          <li class="nav-item">
-          <a class="nav-link" href="/show_product">Show_product</a>
-        </li>
+
 
         
         <li class="nav-item dropdown">
@@ -48,7 +43,21 @@
           </a>
           <ul class="dropdown-menu">
             <li><a class="dropdown-item" href="#">Action</a></li>
-            <li><a class="dropdown-item" href="#">Another action</a></li>
+                      <li class="nav-item">
+          <a class="nav-link" href="/product_api">Product_api</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="/show_product">Show_product</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="/customer_crud">Customer_crud</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="/employees_crud">Employees_crud</a>
+        </li>
+          <li class="nav-item">
+          <a class="nav-link" href="/type_crud">Type_crud</a>
+        </li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>

@@ -53,7 +53,25 @@ component: () => import(/* webpackChunkName: "type" */ '../views/Product_api.vue
 path: '/show_product',
 name: 'show_product',
 component: () => import(/* webpackChunkName: "type" */ '../views/Show_product.vue')
+},
+{
+path: '/customer_crud',
+name: 'customer_crud',
+component: () => import(/* webpackChunkName: "type" */ '../views/Customer_crud.vue')
+},
+{
+path: '/employees_crud',
+name: 'employees_crud',
+component: () => import(/* webpackChunkName: "type" */ '../views/Employees_crud.vue')
+},
+{
+path: '/type_crud',
+name: 'type_crud',
+component: () => import(/* webpackChunkName: "type" */ '../views/Type_crud.vue')
 }
+
+
+
 
 
 ]
