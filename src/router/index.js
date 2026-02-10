@@ -65,10 +65,16 @@ name: 'employees_crud',
 component: () => import(/* webpackChunkName: "type" */ '../views/Employees_crud.vue')
 },
 {
+path: '/student_crud',
+name: 'student_crud',
+component: () => import(/* webpackChunkName: "type" */ '../views/Student_crud.vue')
+},
+{
 path: '/type_crud',
 name: 'type_crud',
 component: () => import(/* webpackChunkName: "type" */ '../views/Type_crud.vue')
 }
+
 
 
 

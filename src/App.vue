@@ -58,6 +58,9 @@
           <li class="nav-item">
           <a class="nav-link" href="/type_crud">Type_crud</a>
         </li>
+          <li class="nav-item">
+          <a class="nav-link" href="/student_crud">Student_crud</a>
+        </li>
             <li><hr class="dropdown-divider"></li>
             <li><a class="dropdown-item" href="#">Something else here</a></li>
           </ul>
