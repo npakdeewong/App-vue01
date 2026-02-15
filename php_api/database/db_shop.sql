@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Jan 25, 2026 at 12:31 PM
+-- Generation Time: Feb 15, 2026 at 11:10 AM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -59,20 +59,22 @@ CREATE TABLE `employees` (
   `department` varchar(50) NOT NULL,
   `salary` decimal(10,2) NOT NULL,
   `active` tinyint(1) DEFAULT 1,
-  `created_at` timestamp NOT NULL DEFAULT current_timestamp()
+  `created_at` timestamp NOT NULL DEFAULT current_timestamp(),
+  `image` varchar(50) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
 --
 -- Dumping data for table `employees`
 --
 
-INSERT INTO `employees` (`emp_id`, `full_name`, `department`, `salary`, `active`, `created_at`) VALUES
-(00000001, 'สมชาย ใจดี', 'IT', '35000.00', 1, '2026-01-18 10:24:17'),
-(00000002, 'สมหญิง ดีงาม', 'บัญชี', '28000.00', 1, '2026-01-18 10:24:17'),
-(00000003, 'อนันต์ สุขใจ', 'การตลาด', '25000.00', 0, '2026-01-18 10:24:17'),
-(00000004, 'สุดา พรมดี', 'ทรัพยากรบุคคล', '32000.00', 1, '2026-01-18 10:24:17'),
-(00000005, 'นิค', 'IT', '45000.00', 1, '2026-01-25 09:54:09'),
-(00000006, 'นิติพล ภักดีวงษ์', 'IT', '45000.00', 1, '2026-01-25 09:59:35');
+INSERT INTO `employees` (`emp_id`, `full_name`, `department`, `salary`, `active`, `created_at`, `image`) VALUES
+(00000001, 'สมชาย ใจดี มากมายยย', 'ใจดี มากมายยย', '48000.00', 1, '2026-01-18 10:24:17', '1771149975_images (2).jpg'),
+(00000003, 'อนันต์ สุขใจ', 'การตลาด', '25000.00', 0, '2026-01-18 10:24:17', '1771149137_cat.jpg'),
+(00000004, 'สุดา', 'ทรัพยา', '32000.00', 1, '2026-01-18 10:24:17', '1771149227_images.jpg'),
+(00000005, 'นิค', 'IT', '45000.00', 1, '2026-01-25 09:54:09', '1771149180_hq720.jpg'),
+(00000008, 'ืรรรรร', 'นิค', '4000.00', 1, '2026-02-15 09:45:39', '1771149106_mouse.jpg'),
+(00000009, 'nitiponnnnnnn', 'IT', '25000.00', 1, '2026-02-15 09:50:19', '1771149091_cat.jpg'),
+(00000010, 'NIckkkkkkk', 'ITI', '50000.00', 1, '2026-02-15 10:04:56', '1771149896_images (1).jpg');
 
 -- --------------------------------------------------------
 
@@ -97,7 +99,34 @@ CREATE TABLE `products` (
 INSERT INTO `products` (`product_id`, `product_name`, `description`, `price`, `image`, `stock`, `created_at`) VALUES
 (00000000001, 'เสื้อยืดคอกลม', 'เสื้อยืดผ้าฝ้าย 100% สวมใส่สบาย', '199.00', 'P1.jpg', 50, '2026-01-25 10:43:13'),
 (00000000002, 'กางเกงยีนส์', 'กางเกงยีนส์ทรงกระบอก สีฟ้าอ่อน', '799.00', 'P2.jpg', 30, '2026-01-25 10:43:13'),
-(00000000003, 'รองเท้าผ้าใบ', 'รองเท้าผ้าใบสีขาว ใส่ได้ทุกโอกาส', '1299.00', 'P3.jpg', 20, '2026-01-25 10:43:13');
+(00000000003, 'รองเท้าผ้าใบ', 'รองเท้าผ้าใบสีขาว ใส่ได้ทุกโอกาส', '1399.00', 'P3.jpg', 20, '2026-01-25 10:43:13'),
+(00000000004, 'เก้าอี้ เกมมิ่ง', 'GAMING CHAIR (เก้าอี้เกมมิ่ง) EGA TYPE G3 GAMING WHITE', '7490.00', '1771145402_P4.jpg', 10, '2026-02-15 08:46:31'),
+(00000000005, 'MX Keys for Business', 'Boost productivity of coders, analysts and creators who need stability, precision and power to work better and truly master what they make.', '3450.00', '1771145382_MX KEYS.png', 5, '2026-02-15 08:49:42');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `student`
+--
+
+CREATE TABLE `student` (
+  `student_id` int(11) NOT NULL,
+  `first_name` varchar(50) NOT NULL,
+  `last_name` varchar(50) NOT NULL,
+  `phone` varchar(15) DEFAULT NULL,
+  `email` varchar(100) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `student`
+--
+
+INSERT INTO `student` (`student_id`, `first_name`, `last_name`, `phone`, `email`) VALUES
+(1, 'John', 'Doe', '0812345678', 'john.doe@example.com'),
+(2, 'Jane', 'Smith', '0819876543', 'jane.smith@example.com'),
+(3, 'Michael', 'Brown', '0823456789', 'michael.brown@example.com'),
+(4, 'Emily', 'Johnson', '0834567890', 'emily.johnson@example.com'),
+(5, 'Chris', 'Williams', '0845678901', 'chris.williams@example.com');
 
 -- --------------------------------------------------------
 
@@ -141,6 +170,12 @@ ALTER TABLE `products`
   ADD PRIMARY KEY (`product_id`);
 
 --
+-- Indexes for table `student`
+--
+ALTER TABLE `student`
+  ADD PRIMARY KEY (`student_id`);
+
+--
 -- Indexes for table `type`
 --
 ALTER TABLE `type`
@@ -160,13 +195,19 @@ ALTER TABLE `customers`
 -- AUTO_INCREMENT for table `employees`
 --
 ALTER TABLE `employees`
-  MODIFY `emp_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `emp_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `product_id` int(11) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+
+--
+-- AUTO_INCREMENT for table `student`
+--
+ALTER TABLE `student`
+  MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `type`
