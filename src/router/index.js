@@ -56,7 +56,7 @@ meta: { requiresAuth: true }
 path: '/show_product',
 name: 'show_product',
 component: () => import(/* webpackChunkName: "type" */ '../views/Show_product.vue'),
-meta: { requiresAuth: true }
+
 },
 {
 path: '/customer_crud',

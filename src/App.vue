@@ -32,7 +32,11 @@
               <a class="nav-link" href="/type">Type</a>
             </li>
 
-            <li class="nav-item dropdown">
+                <li class="nav-item" >
+                  <a class="nav-link" href="/show_product">Show_product</a>
+                </li>
+                
+            <li class="nav-item dropdown" v-if="isLoggedIn">
               <a
                 class="nav-link dropdown-toggle"
                 href="#"
@@ -51,9 +55,7 @@
                 <li class="nav-item" v-if="isLoggedIn">
                   <a class="nav-link" href="/product_crud">Product_crud</a>
                 </li>
-                <li class="nav-item" v-if="isLoggedIn">
-                  <a class="nav-link" href="/show_product">Show_product</a>
-                </li>
+
                 <li>
                   <hr class="dropdown-divider" />
                 </li>

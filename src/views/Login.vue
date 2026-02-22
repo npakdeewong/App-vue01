@@ -93,7 +93,7 @@ export default {
             localStorage.setItem("adminLogin", "true");
             localStorage.setItem("user", JSON.stringify(res.data.user));
 
-            this.$router.push("/");
+            this.$router.push("/Product_crud");
 
         } else {
 
