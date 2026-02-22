@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Feb 15, 2026 at 11:10 AM
+-- Generation Time: Feb 22, 2026 at 12:11 PM
 -- Server version: 10.4.27-MariaDB
 -- PHP Version: 8.1.12
 
@@ -20,6 +20,26 @@ SET time_zone = "+00:00";
 --
 -- Database: `db_shop`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `categories`
+--
+
+CREATE TABLE `categories` (
+  `category_id` int(11) NOT NULL,
+  `category_name` varchar(255) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
+
+--
+-- Dumping data for table `categories`
+--
+
+INSERT INTO `categories` (`category_id`, `category_name`) VALUES
+(1, 'เครื่องใช้ไฟฟ้า'),
+(2, 'เสื้อผ้า'),
+(3, 'รองเท้า');
 
 -- --------------------------------------------------------
 
@@ -45,7 +65,9 @@ INSERT INTO `customers` (`customer_id`, `firstName`, `lastName`, `phone`, `usern
 (00000002, 'วิภา', 'สุขสันต์', '0898765432', 'wipa', 'wipa2025'),
 (00000003, 'John', 'Doe', '0991122334', 'johnd', 'securepwd'),
 (00000004, 'Nitipon', 'Pakdeewong', '0863704843', 'Nitipon', '$2y$10$UsbGgyuIHrcrS'),
-(00000005, 'Nick', 'M', '0613845893', 'Nick', '$2y$10$s4ooqnZ1lavvsXvIHZ3V3.AhpoWRqkT7qcRKnaL52uBUCgyLJEwBC');
+(00000005, 'Nick', 'M', '0613845893', 'Nick', '$2y$10$s4ooqnZ1lavvsXvIHZ3V3.AhpoWRqkT7qcRKnaL52uBUCgyLJEwBC'),
+(00000006, 'nick', 'pak', '0123', 'nitipon', '$2y$10$1pGVyV0LeXei.j3ajpDkZ.sVlX7vh80r9oLOkgTSUnk715j3SFqVS'),
+(00000007, 'nickky', 'kkk', '123', 'nitiponn', '$2y$10$i6Pfplrdzm.tm9fTtGVIM.sFYSESuTlCA/pR19mzbJ2aukDVwI6k2');
 
 -- --------------------------------------------------------
 
@@ -89,6 +111,7 @@ CREATE TABLE `products` (
   `price` decimal(10,2) NOT NULL,
   `image` text DEFAULT NULL,
   `stock` int(11) NOT NULL,
+  `category_id` int(11) NOT NULL,
   `created_at` timestamp NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_general_ci;
 
@@ -96,12 +119,13 @@ CREATE TABLE `products` (
 -- Dumping data for table `products`
 --
 
-INSERT INTO `products` (`product_id`, `product_name`, `description`, `price`, `image`, `stock`, `created_at`) VALUES
-(00000000001, 'เสื้อยืดคอกลม', 'เสื้อยืดผ้าฝ้าย 100% สวมใส่สบาย', '199.00', 'P1.jpg', 50, '2026-01-25 10:43:13'),
-(00000000002, 'กางเกงยีนส์', 'กางเกงยีนส์ทรงกระบอก สีฟ้าอ่อน', '799.00', 'P2.jpg', 30, '2026-01-25 10:43:13'),
-(00000000003, 'รองเท้าผ้าใบ', 'รองเท้าผ้าใบสีขาว ใส่ได้ทุกโอกาส', '1399.00', 'P3.jpg', 20, '2026-01-25 10:43:13'),
-(00000000004, 'เก้าอี้ เกมมิ่ง', 'GAMING CHAIR (เก้าอี้เกมมิ่ง) EGA TYPE G3 GAMING WHITE', '7490.00', '1771145402_P4.jpg', 10, '2026-02-15 08:46:31'),
-(00000000005, 'MX Keys for Business', 'Boost productivity of coders, analysts and creators who need stability, precision and power to work better and truly master what they make.', '3450.00', '1771145382_MX KEYS.png', 5, '2026-02-15 08:49:42');
+INSERT INTO `products` (`product_id`, `product_name`, `description`, `price`, `image`, `stock`, `category_id`, `created_at`) VALUES
+(00000000001, 'เสื้อยืดคอกลม', 'เสื้อยืดผ้าฝ้าย 100% สวมใส่สบาย สบ๊ายยยยยยย', '259.00', 'P1.jpg', 500, 2, '2026-01-25 10:43:13'),
+(00000000002, 'กางเกงยีนส์', 'กางเกงยีนส์ทรงกระบอก สีฟ้าอ่อน', '799.00', 'P2.jpg', 30, 2, '2026-01-25 10:43:13'),
+(00000000003, 'รองเท้าผ้าใบ', 'รองเท้าผ้าใบสีขาว ใส่ได้ทุกโอกาส', '1399.00', 'P3.jpg', 20, 3, '2026-01-25 10:43:13'),
+(00000000004, 'เก้าอี้ เกมมิ่ง', 'GAMING CHAIR (เก้าอี้เกมมิ่ง) EGA TYPE G3 GAMING WHITE', '7490.00', '1771145402_P4.jpg', 10, 1, '2026-02-15 08:46:31'),
+(00000000005, 'MX Keys for Business', 'Boost productivity of coders, analysts and creators who need stability, precision and power to work better and truly master what they make.', '3450.00', '1771145382_MX KEYS.png', 5, 2, '2026-02-15 08:49:42'),
+(00000000006, 'ลิง พลัส', 'ลิงยิ้ม พลัส', '2.00', '1771748409_ling.jpg', 5, 1, '2026-02-22 08:20:09');
 
 -- --------------------------------------------------------
 
@@ -152,6 +176,12 @@ INSERT INTO `type` (`type_id`, `type_name`) VALUES
 --
 
 --
+-- Indexes for table `categories`
+--
+ALTER TABLE `categories`
+  ADD PRIMARY KEY (`category_id`);
+
+--
 -- Indexes for table `customers`
 --
 ALTER TABLE `customers`
@@ -186,10 +216,16 @@ ALTER TABLE `type`
 --
 
 --
+-- AUTO_INCREMENT for table `categories`
+--
+ALTER TABLE `categories`
+  MODIFY `category_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
 -- AUTO_INCREMENT for table `customers`
 --
 ALTER TABLE `customers`
-  MODIFY `customer_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `customer_id` int(8) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `employees`
@@ -201,13 +237,13 @@ ALTER TABLE `employees`
 -- AUTO_INCREMENT for table `products`
 --
 ALTER TABLE `products`
-  MODIFY `product_id` int(11) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `product_id` int(11) UNSIGNED ZEROFILL NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT for table `student`
 --
 ALTER TABLE `student`
-  MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `student_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 
 --
 -- AUTO_INCREMENT for table `type`
